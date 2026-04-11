@@ -28,4 +28,6 @@ print(f"Session Start : {timestampstart}")
 print(f"Session End   : {timestampend}")
 print(f"Total Keys    : {lines}")
 print(f"Most Frequent : {most_freq}")
-print(f"Key Counts    : {key_count}")
+print("Key Counts :")
+for key, count in sorted(key_count.items(), key=lambda x: x[1], reverse=True):
+    print(f"  {key} : {count}")
