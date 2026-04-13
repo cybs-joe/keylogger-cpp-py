@@ -6,7 +6,22 @@
 #include <fstream>
 #include <ctime>
 using namespace std;
+
 int main(){
+    cout << R"(
+/$$                                               
+| $$                                               
+ /$$$$$$$ /$$   /$$| $$$$$$$   /$$$$$$$        /$$  /$$$$$$   /$$$$$$ 
+/$$_____/| $$  | $$| $$__  $$ /$$_____//$$$$$$|__/ /$$__  $$ /$$__  $$
+| $$      | $$  | $$| $$  \ $$|  $$$$$$|______/ /$$| $$  \ $$| $$$$$$$$
+| $$      | $$  | $$| $$  | $$ \____  $$       | $$| $$  | $$| $$_____/
+|  $$$$$$$|  $$$$$$$| $$$$$$$/ /$$$$$$$/       | $$|  $$$$$$/|  $$$$$$$
+ \_______/ \____  $$|_______/ |_______/        | $$ \______/  \_______/
+           /$$  | $$                      /$$  | $$                    
+          |  $$$$$$/                     |  $$$$$$/                    
+           \______/                       \______/
+)" << endl;
+
     bool con = true; //condition for loop to continue
     struct input_event ev; // this is a standard linux data structure used to represent events
     int fd = open("/dev/input/event3",O_RDONLY); //here I used open and put in it the path and use O_RDONLY for reading file only
