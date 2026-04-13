@@ -8,34 +8,20 @@
 using namespace std;
 
 int main(){
-    cout << R"(
-<<<<<<< HEAD
-/$$                                               
-| $$                                               
- /$$$$$$$ /$$   /$$| $$$$$$$   /$$$$$$$        /$$  /$$$$$$   /$$$$$$ 
-/$$_____/| $$  | $$| $$__  $$ /$$_____//$$$$$$|__/ /$$__  $$ /$$__  $$
-=======
+   cout << R"(
                      /$$                                               
                     | $$                                               
   /$$$$$$$ /$$   /$$| $$$$$$$   /$$$$$$$        /$$  /$$$$$$   /$$$$$$ 
  /$$_____/| $$  | $$| $$__  $$ /$$_____//$$$$$$|__/ /$$__  $$ /$$__  $$
->>>>>>> 5aae848 (add ascii art banner)
 | $$      | $$  | $$| $$  \ $$|  $$$$$$|______/ /$$| $$  \ $$| $$$$$$$$
 | $$      | $$  | $$| $$  | $$ \____  $$       | $$| $$  | $$| $$_____/
 |  $$$$$$$|  $$$$$$$| $$$$$$$/ /$$$$$$$/       | $$|  $$$$$$/|  $$$$$$$
  \_______/ \____  $$|_______/ |_______/        | $$ \______/  \_______/
            /$$  | $$                      /$$  | $$                    
           |  $$$$$$/                     |  $$$$$$/                    
-<<<<<<< HEAD
-           \______/                       \______/
-)" << endl;
-
-=======
            \______/                       \______/                     
 )" << endl;
 
-
->>>>>>> 5aae848 (add ascii art banner)
     bool con = true; //condition for loop to continue
     struct input_event ev; // this is a standard linux data structure used to represent events
     int fd = open("/dev/input/event3",O_RDONLY); //here I used open and put in it the path and use O_RDONLY for reading file only
