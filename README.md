@@ -16,7 +16,8 @@ statistics.
 
 ## Usage
 # Compile and run keylogger
-```g++ keylogp1.cpp -o keylogp1
+``` bash
+g++ keylogp1.cpp -o keylogp1
 ```
 ```sudo ./keylogp1
 ```
