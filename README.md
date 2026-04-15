@@ -19,7 +19,8 @@ statistics.
 ``` bash
 g++ keylogp1.cpp -o keylogp1
 ```
-```sudo ./keylogp1
+``` bash
+sudo ./keylogp1
 ```
 
 # Run analyzer
