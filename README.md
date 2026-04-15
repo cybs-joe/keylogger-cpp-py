@@ -9,15 +9,17 @@ statistics.
 - analyzer.py — reads keylog and displays total keystrokes, most frequent keys, session time
 
 ## Requirements
-- Linux (tested on Arch)
+-Linux (tested on Arch)
 - g++
 - Python 3
 - Root access to read /dev/input/
 
 ## Usage
 # Compile and run keylogger
-g++ keylogp1.cpp -o keylogp1
-sudo ./keylogp1
+```g++ keylogp1.cpp -o keylogp1
+```
+```sudo ./keylogp1
+```
 
 # Run analyzer
 python analyzer.py
