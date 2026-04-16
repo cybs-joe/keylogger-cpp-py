@@ -15,9 +15,8 @@ print(r"""
 
 
 
-with open("keylog1.txt" , "r") as file: #here is a normal reading file operation 
-    content = file.readlines() # this is where what is read being stored
-
+with open("keylog1.txt" , "r") as file:
+    content = file.readlines() 
 
 
 key_count = {} #dictionary
