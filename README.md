@@ -49,3 +49,5 @@ Although this project focuses on implementation, similar techniques are used in 
 ```bash
 g++ keylogp1.cpp -o keylogp1
 sudo ./keylogp1
+
+python analyzer.py
